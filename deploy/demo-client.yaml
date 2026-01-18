@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-client
+  namespace: agents
+  labels:
+    app.kubernetes.io/name: demo-client
+    app.kubernetes.io/part-of: agent-matrix
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: demo-client
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: demo-client
+        app.kubernetes.io/part-of: agent-matrix
+    spec:
+      containers:
+        - name: demo-client
+          image: python:3.11-slim
+          command:
+            - sh
+            - -c
+            - |
+              python -u - <<'PY'
+              import json
+              import time
+              from urllib import request
+
+              url = 'http://demo-server.agents.svc.cluster.local:8080/'
+              payload = json.dumps({"message": "hello from demo-client"}).encode('utf-8')
+
+              while True:
+                  req = request.Request(url, data=payload, headers={'content-type': 'application/json'})
+                  with request.urlopen(req, timeout=5) as resp:
+                      body = resp.read().decode('utf-8')
+                      print(f"sent {len(payload)} bytes, got {resp.status}: {body}")
+                  time.sleep(2)
+              PY
+          resources:
+            requests:
+              cpu: 10m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
