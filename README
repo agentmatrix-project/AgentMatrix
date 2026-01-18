@@ -1,0 +1,7 @@
+# AgentMatrix
+
+AgentMatrix is a Kubernetes-first control plane for running and observing containerized AI agents. The repository focuses on demo-friendly cluster setup and network visibility. Agent code lives in external images; this repo provides manifests and tooling to run multiple agents and study their traffic (MCP/A2A or any HTTP-based protocols).
+
+## Documentation
+
+- Environment setup: `docs/setup.md`
