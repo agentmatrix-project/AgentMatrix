@@ -33,5 +33,5 @@ chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 ## Next Steps
 
 - Bootstrap the cluster: `scripts/bootstrap-demo.sh`.
-- Capture payloads: `scripts/start-kubeshark.sh`.
+- Capture payloads: `scripts/install-kubeshark.sh`.
 - Tear down the cluster: `kind delete cluster --name agent-matrix`.

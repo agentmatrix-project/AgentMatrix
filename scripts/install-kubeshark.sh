@@ -4,3 +4,6 @@ set -euo pipefail
 helm install kubeshark kubeshark/kubeshark \
   -n kubeshark --create-namespace \
   --version 52.4
+
+# To uninstall run:
+# helm uninstall kubeshark -n kubeshark
