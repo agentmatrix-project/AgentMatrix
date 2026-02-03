@@ -1,0 +1,5 @@
+tap:
+  misc:
+    jsonTTL: 15m
+    pcapTTL: 15m
+  storageLimit: 5Gi
