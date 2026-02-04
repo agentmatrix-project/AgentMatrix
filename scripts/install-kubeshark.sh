@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+helm repo add kubeshark https://helm.kubeshark.com
+
 helm install kubeshark kubeshark/kubeshark \
   -n kubeshark --create-namespace \
   --version 52.4 -f configs/kubeshark-values.yaml

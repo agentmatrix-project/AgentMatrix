@@ -1,5 +1,7 @@
-tap:
-  misc:
-    jsonTTL: 15m
-    pcapTTL: 15m
-  storageLimit: 5Gi
+capture:
+    stopped: false            # Whether L7 dissection is stopped
+    stopAfter: 5m             # Auto-stop dissection after idle period
+    raw:
+      enabled: true           # Enable raw capture (independent of stopped)
+      storageSize: 1Gi        # Node-level FIFO buffer size
+    dbMaxSize: 500Mi          # Maximum database size
