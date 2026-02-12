@@ -33,4 +33,4 @@ kubectl -n kube-system rollout status deployment/cilium-operator --timeout=5m
 
 kubectl apply -f deploy/
 
-echo "Cluster ready. Next: run 'scripts/start-kubeshark.sh' to capture payloads."
+echo "Cluster ready. Next: run 'scripts/run-kubeshark.sh' to capture payloads."
