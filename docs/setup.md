@@ -32,7 +32,7 @@ chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 
 ## Next Steps
 
-- Bootstrap the cluster: `scripts/bootstrap-demo.sh`.
+- Bootstrap the cluster: `scripts/prepare-cluster.sh`.
 - Capture payloads: `scripts/install-kubeshark.sh`.
 - Merge a recording's PCAP chunks: `scripts/collect-kubeshark-recording-pcap.sh <recording-id>`.
 - Tear down the cluster: `kind delete cluster --name agent-matrix`.

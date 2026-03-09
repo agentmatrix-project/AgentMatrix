@@ -31,6 +31,4 @@ helm upgrade --install cilium cilium/cilium \
 kubectl -n kube-system rollout status daemonset/cilium --timeout=5m
 kubectl -n kube-system rollout status deployment/cilium-operator --timeout=5m
 
-kubectl apply -f deploy/
-
 echo "Cluster ready. Next: run 'scripts/run-kubeshark.sh' to capture payloads."
