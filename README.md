@@ -1,5 +1,6 @@
 # AgentMatrix
 
+AI Agents are increasingly complex, offering a variety of actions and endpoints, making it difficult to evaluate their actions and privacy/security risks. It is vital to provide sandboxed benchmarking and evaluation environments to assess their capabilities. 
 AgentMatrix is a Kubernetes-first environment for running multiple containerized AI agents and inspecting how they interact over the the network.
 
 This repository does not contain agent application code or model-serving logic. Instead, it provides the cluster configuration, sample workloads, and traffic-observability tooling needed to stand up an isolated local environment where agent-to-agent communication can be exercised and analyzed. The focus is on visibility: what services are talking, what requests are flowing between them, and how to capture those exchanges for debugging or demos.
@@ -35,31 +36,31 @@ For more information on how to use AgentMatrix refer to the [workflow manual](do
 
 ## Quick Start
 
-Prepare the cluster:
+> Prepare the cluster:
 
 ```bash
 scripts/prepare-cluster.sh
 ```
 
-Deploy the sample workloads:
+> Deploy the sample workloads:
 
 ```bash
 kubectl apply -f deploy/
 ```
 
-Install Kubeshark:
+> Install Kubeshark:
 
 ```bash
 scripts/install-kubeshark.sh
 ```
 
-Expose the Kubeshark UI locally:
+> Expose the Kubeshark UI locally:
 
 ```bash
 scripts/run-kubeshark.sh
 ```
 
-When you want to merge packet captures for a recording:
+> When you want to merge packet captures for a recording:
 
 ```bash
 scripts/collect-kubeshark-recording-pcap.sh <recording-id>
@@ -74,7 +75,7 @@ AgentMatrix is best suited for:
 - validating observability tooling before deploying real agent images
 - capturing network payloads for analysis and protocol experimentation
 
-It is not yet a full production control plane. The current repository is intentionally scoped around local setup, visibility, and repeatable demonstrations.
+Current version is not yet a full production control plane. The current repository is intentionally scoped around local setup, visibility, and repeatable demonstrations.
 
 ## Documentation
 
