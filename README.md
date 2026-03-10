@@ -36,7 +36,7 @@ For more information on how to use AgentMatrix refer to the [workflow manual](do
 
 ## Quick Start
 
-> Prepare the cluster:
+> Make sure Docker Desktop is running, then prepare the cluster:
 
 ```bash
 scripts/prepare-cluster.sh
